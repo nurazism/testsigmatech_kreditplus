@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PemesananMakananCMS.Models.PemesananModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PemesananId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuMakananId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtyPemesanan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HargaTotal)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PemesananId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MenuMakananId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtyPemesanan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HargaTotal)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    }
+
+
+</table>
